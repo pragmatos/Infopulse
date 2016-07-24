@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Task</title>
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+	<header>
+		<button class="toggle-menu">
+			<div class="line"></div>
+		</button>
+	</header>
+	<main>
+
+		<section class="left-panel">
+			
+		</section>
+		<section class="dashboard">
+			<table>
+				<tbody>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+	</main>
+	<footer>
+		<p>infopulse courses @ 2016</p>	
+	</footer>
+	<script>
+		var button = document.querySelector('.toggle-menu');
+		button.addEventListener('click', function(e){
+			var t = document.querySelector('.left-panel');
+			t.classList.toggle('show');
+			console.log(t);	
+		})
+		console.log(button);
+	</script>
+</body>
+</html>
