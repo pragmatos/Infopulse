@@ -14,35 +14,76 @@
 	</header>
 	<main>
 
-		<section class="left-panel">
-			
+		<section class="left-panel show">
+			<menu>
+				<form action="" name="filter">
+					<input type="text" name="search">
+					<div class="group-checkbox">
+						<label><input type="checkbox">text</label>
+						<label><input type="checkbox">text</label>
+						<label><input type="checkbox">text</label>
+						<label><input type="checkbox">text</label>
+					</div>
+					<input type="text" name="date">
+				</form>
+			</menu>
 		</section>
 		<section class="dashboard">
 			<table>
+				<thead>
+					<tr>
+						<th>1</th>
+						<th>2</th>
+						<th>3</th>
+						<th>4</th>
+						<th>5</th>
+						<th>6</th>
+						<th>7</th>
+						<th>
+							<button class="add-custumer">
+								<img src="img/add-new.png" alt="">
+							</button>
+						</th>
+					</tr>
+				</thead>
 				<tbody>
+				
 					<tr>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
+						<td>12121</td>
+						<td>12121</td>
+						<td>12121</td>
+						<td>12121</td>
+						<td>12121</td>
+						<td>12121</td>
+						<td>12121</td>
+						<td>12121</td>
 					</tr>
 					<tr>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
+						<td>12121</td>
+						<td>12121</td>
+						<td>12121</td>
+						<td>12121</td>
+						<td>12121</td>
+						<td>12121</td>
+						<td>12121</td>
+						<td>12121</td>
 					</tr>
-					<tr>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-					</tr>
-				</tbody>
+					
+				</div>
 			</table>
+		</section>
+		<section class="right-panel">
+			<form action="" name="customer">
+				<input type="text" name="name">
+				<input type="text" name="duedate">
+				<input type="text" name="crdate">
+				<input type="text" name="members">
+				<select name="" id=""></select>
+				<select name="" id=""></select>
+				<button class="create-customer">
+					create
+				</button>
+			</form>
 		</section>
 	</main>
 	<footer>
@@ -50,8 +91,20 @@
 	</footer>
 	<script>
 		var button = document.querySelector('.toggle-menu');
+		var button1 = document.querySelector('.add-custumer');
 		button.addEventListener('click', function(e){
 			var t = document.querySelector('.left-panel');
+			t.classList.toggle('show');
+			console.log(t);	
+		});
+		
+		document.addEventListener('click', function(e){
+			var t = document.querySelector('.right-panel');
+			t.classList.remove('show');
+			console.log(t);	
+		},true);
+		button1.addEventListener('click', function(e){
+			var t = document.querySelector('.right-panel');
 			t.classList.toggle('show');
 			console.log(t);	
 		})
