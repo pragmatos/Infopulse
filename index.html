@@ -9,30 +9,49 @@
 <body>
 	<header>
 		<button class="toggle-menu">
-			<div class="line"></div>
+			<span class="line"></span>
 		</button>
 	</header>
-	<main>
-
-		<section class="left-panel show">
+	<section class="main">
+		<div class="left-panel">
 			<menu>
-				<form action="" name="filter">
+				<div class="wrap-input">
 					<input type="text" name="search">
-					<div class="group-checkbox">
-						<label><input type="checkbox">text</label>
-						<label><input type="checkbox">text</label>
-						<label><input type="checkbox">text</label>
-						<label><input type="checkbox">text</label>
+					<button class="search">
+					</button>
+				</div>
+
+				<div class="group-checkbox">
+					<div>
+						<input id="web" type="checkbox"/>
+						<label for="web">web</label>
 					</div>
+
+					<div>
+						<input id="des" type="checkbox"/>
+						<label for="des">desctop</label>
+					</div>
+					<div>
+						<input id="web" type="checkbox"/>
+						<label for="web">support</label>
+					</div>
+					<div>
+						<input id="web" type="checkbox"/>
+						<label for="web">web</label>
+					</div>
+					
+				</div>
+				<div class="wrap-input">
 					<input type="text" name="date">
-				</form>
+					<button class="data-pick"></button>
+				</div>
 			</menu>
-		</section>
+		</div>
 		<section class="dashboard">
 			<table>
 				<thead>
 					<tr>
-						<th>1</th>
+						<th>project name</th>
 						<th>2</th>
 						<th>3</th>
 						<th>4</th>
@@ -46,7 +65,108 @@
 						</th>
 					</tr>
 				</thead>
-							
+					<tbody>		
+					<tr>
+						<td>project name</td>
+						<td>12121</td>
+						<td>12121</td>
+						<td>12121</td>
+						<td>12121</td>
+						<td>12121</td>
+						<td>12121</td>
+						<td>12121</td>
+					</tr>
+
+					<tr>
+						<td>12121</td>
+						<td>12121</td>
+						<td>12121</td>
+						<td>12121</td>
+						<td>12121</td>
+						<td>12121</td>
+						<td>12121</td>
+						<td>12121</td>
+					</tr>
+					<tr>
+						<td>12121</td>
+						<td>12121</td>
+						<td>12121</td>
+						<td>12121</td>
+						<td>12121</td>
+						<td>12121</td>
+						<td>12121</td>
+						<td>12121</td>
+					</tr>
+					<tr>
+						<td>12121</td>
+						<td>12121</td>
+						<td>12121</td>
+						<td>12121</td>
+						<td>12121</td>
+						<td>12121</td>
+						<td>12121</td>
+						<td>12121</td>
+					</tr>
+					<tr>
+						<td>12121</td>
+						<td>12121</td>
+						<td>12121</td>
+						<td>12121</td>
+						<td>12121</td>
+						<td>12121</td>
+						<td>12121</td>
+						<td>12121</td>
+					</tr>
+					<tr>
+						<td>12121</td>
+						<td>12121</td>
+						<td>12121</td>
+						<td>12121</td>
+						<td>12121</td>
+						<td>12121</td>
+						<td>12121</td>
+						<td>12121</td>
+					</tr>
+					<tr>
+						<td>12121</td>
+						<td>12121</td>
+						<td>12121</td>
+						<td>12121</td>
+						<td>12121</td>
+						<td>12121</td>
+						<td>12121</td>
+						<td>12121</td>
+					</tr>
+					<tr>
+						<td>12121</td>
+						<td>12121</td>
+						<td>12121</td>
+						<td>12121</td>
+						<td>12121</td>
+						<td>12121</td>
+						<td>12121</td>
+						<td>12121</td>
+					</tr>
+					<tr>
+						<td>12121</td>
+						<td>12121</td>
+						<td>12121</td>
+						<td>12121</td>
+						<td>12121</td>
+						<td>12121</td>
+						<td>12121</td>
+						<td>12121</td>
+					</tr>
+					<tr>
+						<td>12121</td>
+						<td>12121</td>
+						<td>12121</td>
+						<td>12121</td>
+						<td>12121</td>
+						<td>12121</td>
+						<td>12121</td>
+						<td>12121</td>
+					</tr>
 					<tr>
 						<td>12121</td>
 						<td>12121</td>
@@ -70,41 +190,56 @@
 				<tbody>	
 					
 			</table>
-			<section class="right-panel">
-				<form action="" name="customer">
-					<input type="text" name="name">
-					<input type="text" name="duedate">
-					<input type="text" name="crdate">
-					<input type="text" name="members">
-					<select name="" id=""></select>
-					<select name="" id=""></select>
-					<button class="create-customer">
-						create
-					</button>
-				</form>
+			<section class="new-project show">
+				<div class="clickable"></div>
+				<div class="right-panel">
+					<form name="project">
+						<div class="wrap-input">
+							<input type="text" name="name">
+						</div>
+						<div class="wrap-input">
+							<input type="text" name="name">
+						</div>
+						<div class="wrap-input">
+							<input type="text" name="name">
+						</div>
+						<div class="wrap-input">
+							<input type="text" name="name">
+						</div>
+						<select name="" id=""></select>
+						<select name="" id=""></select>
+						<button class="create-project">
+							create
+						</button>
+					</form>
+				</div>
 			</section>
 		</section>
+	</section>
 		
-	</main>
 	<footer>
 		<p>infopulse courses @ 2016</p>	
 	</footer>
-	<script>
+	<script type="text/javascript">
 		var button = document.querySelector('.toggle-menu');
 		var button1 = document.querySelector('.add-custumer');
+		var main = document.querySelector('.clickable');
+		var menu = document.querySelector('menu');
 		button.addEventListener('click', function(e){
 			var t = document.querySelector('.left-panel');
 			t.classList.toggle('show');
+
 			console.log(t);	
 		});
 		
-		document.addEventListener('click', function(e){
-			var t = document.querySelector('.right-panel');
+		main.addEventListener('click', function(e){
+
+			var t = document.querySelector('.new-project');
 			t.classList.remove('show');
 			console.log(t);	
 		},true);
 		button1.addEventListener('click', function(e){
-			var t = document.querySelector('.right-panel');
+			var t = document.querySelector('.new-project');
 			t.classList.toggle('show');
 			console.log(t);	
 		})

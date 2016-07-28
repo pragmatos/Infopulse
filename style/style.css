@@ -5,10 +5,13 @@ body, html{
 	margin: 0;
 	padding: 0;
 	min-width: 1024px;
+	text-transform: uppercase;
 }
 
-main{
+.main{
+	display: -ms-flexbox;
 	display: flex;	
+	width: 100%;
 	height: 95%;		
 	
 }
@@ -45,63 +48,149 @@ button:hover{
     background-color: white;
 }
 .left-panel.show{
-	width: 30%;
+	width: 25%;
+}
+.left-panel.show menu{
+	visibility: visible;
 }
 .left-panel{
+	align-items: center;
 	background: black;
 	width: 0;
 	transition: .5s;
 }
-.right-panel{
-	position: fixed;
+menu{
 	visibility: hidden;
+	width: 76%;
+	min-width: 180px;
+	padding: 0;
+	margin: 32% auto;
+	height: 50%;
+}
+.group-checkbox input[type="checkbox"]{
+	display: none;
+	font-size: 1rem;
+}
+.group-checkbox{
+	font-size: 1rem;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	margin: 5% 0;
+	height: 40%;
+}
+.group-checkbox{
+	border-bottom: #d77016 2px solid;
+	min-height: 30%;
+	background: #0d0d0d;
+}
+.group-checkbox div{
+	width: 40%;
+	height: 50%;
+}
+.group-checkbox input[type="checkbox"]+label{
+	cursor: pointer;
+	font-size: .8em;
+}
+.group-checkbox input[type="checkbox"]+label:before{
+	content: "";
+	display: inline-block;
+	height: 50%;
+	width: 40%;
+	background: url("../img/unchecked.png");
+	background-size: cover;
+}
+.group-checkbox input[type="checkbox"]:checked+label:before{
+	background:  url("../img/checked.png") no-repeat ;
+	background-size: cover;
+}
+
+.new-project{
+	position: fixed;
+	display: flex;
+	display: -ms-flexbox;
 	right: 0;
 	top:0;
 	height: 95%;
 	width: 0;
-	background: black;
-	transition: 0.5s;
+	transition: 0.5s linear;
 }
-.right-panel.show{
-	visibility: visible;
-	width: 25%;
+.new-project.show{
+	width: 100%;
 }
-.right-panel form{
+.new-project .clickable{
 	width: 80%;
+}
+.new-project .right-panel{
+	width: 20%;
+	min-width: 256px;
+	background: black;
+}
+.new-project form{
+	width: 70%;
+	height: 100%;
 	margin: auto;
 }
-menu{
-	width: 76%;
-	min-width: 180px;
-	padding: 0;
-	margin: 150px auto 0;	
-	background: green;
+.wrap-input{
+	position: relative;
+	height: 14%;
+}
+.new-project .wrap-input{
+	height: 7%;
+}
+.wrap-input button{
+	position: absolute;
+	top: 5%;
+	right: 1%;
+	height: 50%;
+	width: 12%;
+	
+}
+.wrap-input .search{
+	background: url("../img/lupa.png") no-repeat right top;
+	background-size: cover;
+}
+.wrap-input .data-pick{
+	background: url("../img/data-pick.png") no-repeat right top;
+	background-size: cover;
 }
 input[type="text"]{
+	box-sizing: border-box;
 	color:white;
+	font-size: 0.8rem;
 	background: #221203;
 	width: 100%;
+	height: 100%;
 	border: none;
 	padding: 10px;
 	border-bottom: #d77016 2px solid; 
 	outline: none;
+	text-transform: uppercase;	
 }
+
 .dashboard{
-	padding-right: 4%;
 	width: 100%;
 	background: #0a0b0d;
+	height: 100%;
+	overflow-y: auto;
 }
 table{
-	margin:2%;
-	width: 100%;
-	height: 50px;
+	table-layout: fixed;
+	margin:2% auto;
+	width: 95%;
+	
 	border-collapse: collapse;
+	overflow-y:scroll;
 }
 
 thead th{
 	padding: 10px; 
 }
-
+tbody{
+	max-height: 100px;
+	min-height: 110px;
+	overflow: scroll;
+}
 thead th:first-child{
 	background: url("../img/border-th.png") no-repeat right;
 }
@@ -115,12 +204,10 @@ tbody td:first-child{
 	background: url("../img/border-td.png") no-repeat right;
 }
 table td{
-	padding: 20px 5px;
+	padding: 20px 30px 20px; 
 	text-align: center;
 }
-.group-checkbox{
-	background: #0d0d0d;
-}
+
 footer{
 	display: flex;
 	justify-content: center;
