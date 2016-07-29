@@ -195,7 +195,7 @@
 				<div class="right-panel">
 					<form name="project">
 						<div class="wrap-input">
-							<input type="text" name="name">
+							<input type="text" name="name" placeholder="project name">
 						</div>
 						<div class="wrap-input">
 							<input type="text" name="name">
@@ -206,11 +206,34 @@
 						<div class="wrap-input">
 							<input type="text" name="name">
 						</div>
-						<select name="" id=""></select>
-						<select name="" id=""></select>
-						<button class="create-project">
-							create
-						</button>
+						<div class="wrap-input">
+							<input type="text" name="name">
+						</div>
+						<div class="wrap-input">
+							<div class="custom-select" data-value="customer">	
+								<span>customer</span>
+								<ul class="dropdown">
+									<li data-value="Jonn">Jonn</li>
+									<li data-value="2">David</li>
+									<li>2</li>
+									<li>4</li>
+								</ul>
+							</div>
+						</div>
+						<div class="wrap-input">
+							<div class="custom-select" data-value="type">	
+								<span>	type</span>
+								<ul class="dropdown">
+									<li data-value="5">5</li>
+									<li data-value="6">6</li>
+									<li>2</li>
+									<li>4</li>
+								</ul>
+							</div>
+						</div>
+						<div class="wrap-input">
+							<input type="submit" value="create">
+						</div>
 					</form>
 				</div>
 			</section>
@@ -225,11 +248,30 @@
 		var button1 = document.querySelector('.add-custumer');
 		var main = document.querySelector('.clickable');
 		var menu = document.querySelector('menu');
+		var selects = document.querySelectorAll('.custom-select');
 		button.addEventListener('click', function(e){
 			var t = document.querySelector('.left-panel');
 			t.classList.toggle('show');
 
 			console.log(t);	
+		});
+
+		for(var i = 0; i <selects.length;i++){
+			selects[i].addEventListener('click', function(e){
+				e.stopPropagation();
+				this.classList.toggle('active');
+				this.dataset.value = e.target.dataset.value;
+				this.children[0].innerText = this.dataset.value;
+		});	
+		}
+		
+
+		document.addEventListener('click', function(e){
+			e.stopPropagation();
+			for(var i = 0; i <selects.length;i++){
+				selects[i].classList.remove('active');	
+			}
+			
 		});
 		
 		main.addEventListener('click', function(e){
