@@ -65,7 +65,7 @@
 						</th>
 					</tr>
 				</thead>
-					<tbody>		
+				<tbody>		
 					<tr>
 						<td>project name</td>
 						<td>12121</td>
@@ -211,10 +211,10 @@
 						</div>
 						<div class="wrap-input">
 							<div class="custom-select" data-value="customer">	
-								<span>customer</span>
+								<span data-value="customerS">customer</span>
 								<ul class="dropdown">
 									<li data-value="Jonn">Jonn</li>
-									<li data-value="2">David</li>
+									<li data-value="David">David</li>
 									<li>2</li>
 									<li>4</li>
 								</ul>
@@ -222,7 +222,7 @@
 						</div>
 						<div class="wrap-input">
 							<div class="custom-select" data-value="type">	
-								<span>	type</span>
+								<span data-value="type">type</span>
 								<ul class="dropdown">
 									<li data-value="5">5</li>
 									<li data-value="6">6</li>
@@ -261,8 +261,9 @@
 				e.stopPropagation();
 				this.classList.toggle('active');
 				this.dataset.value = e.target.dataset.value;
+				this.children[0].dataset.value = e.target.dataset.value;
 				this.children[0].innerText = this.dataset.value;
-		});	
+			});	
 		}
 		
 
