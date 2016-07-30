@@ -13,38 +13,20 @@
 		</button>
 	</header>
 	<section class="main">
-		<div class="left-panel">
+		<div class="left-panel show">
 			<menu>
-				<div class="wrap-input">
-					<input type="text" name="search">
-					<button class="search">
-					</button>
-				</div>
-
+				<input type="text" name="search" placeholder="search:">
 				<div class="group-checkbox">
-					<div>
-						<input id="web" type="checkbox"/>
-						<label for="web">web</label>
-					</div>
-
-					<div>
-						<input id="des" type="checkbox"/>
-						<label for="des">desctop</label>
-					</div>
-					<div>
-						<input id="web" type="checkbox"/>
-						<label for="web">support</label>
-					</div>
-					<div>
-						<input id="web" type="checkbox"/>
-						<label for="web">web</label>
-					</div>
-					
+					<input id="web" type="checkbox"/>
+					<label for="web">web</label>
+					<input id="desctop" type="checkbox"/>
+					<label for="desctop">desctop</label>
+					<input id="mobile" type="checkbox"/>
+					<label for="mobile">mobile</label>
+					<input id="support" type="checkbox"/>
+					<label for="support">support</label>		
 				</div>
-				<div class="wrap-input">
-					<input type="text" name="date">
-					<button class="data-pick"></button>
-				</div>
+				<input type="text" name="date">
 			</menu>
 		</div>
 		<section class="dashboard">
@@ -76,168 +58,40 @@
 						<td>12121</td>
 						<td>12121</td>
 					</tr>
-
-					<tr>
-						<td>12121</td>
-						<td>12121</td>
-						<td>12121</td>
-						<td>12121</td>
-						<td>12121</td>
-						<td>12121</td>
-						<td>12121</td>
-						<td>12121</td>
-					</tr>
-					<tr>
-						<td>12121</td>
-						<td>12121</td>
-						<td>12121</td>
-						<td>12121</td>
-						<td>12121</td>
-						<td>12121</td>
-						<td>12121</td>
-						<td>12121</td>
-					</tr>
-					<tr>
-						<td>12121</td>
-						<td>12121</td>
-						<td>12121</td>
-						<td>12121</td>
-						<td>12121</td>
-						<td>12121</td>
-						<td>12121</td>
-						<td>12121</td>
-					</tr>
-					<tr>
-						<td>12121</td>
-						<td>12121</td>
-						<td>12121</td>
-						<td>12121</td>
-						<td>12121</td>
-						<td>12121</td>
-						<td>12121</td>
-						<td>12121</td>
-					</tr>
-					<tr>
-						<td>12121</td>
-						<td>12121</td>
-						<td>12121</td>
-						<td>12121</td>
-						<td>12121</td>
-						<td>12121</td>
-						<td>12121</td>
-						<td>12121</td>
-					</tr>
-					<tr>
-						<td>12121</td>
-						<td>12121</td>
-						<td>12121</td>
-						<td>12121</td>
-						<td>12121</td>
-						<td>12121</td>
-						<td>12121</td>
-						<td>12121</td>
-					</tr>
-					<tr>
-						<td>12121</td>
-						<td>12121</td>
-						<td>12121</td>
-						<td>12121</td>
-						<td>12121</td>
-						<td>12121</td>
-						<td>12121</td>
-						<td>12121</td>
-					</tr>
-					<tr>
-						<td>12121</td>
-						<td>12121</td>
-						<td>12121</td>
-						<td>12121</td>
-						<td>12121</td>
-						<td>12121</td>
-						<td>12121</td>
-						<td>12121</td>
-					</tr>
-					<tr>
-						<td>12121</td>
-						<td>12121</td>
-						<td>12121</td>
-						<td>12121</td>
-						<td>12121</td>
-						<td>12121</td>
-						<td>12121</td>
-						<td>12121</td>
-					</tr>
-					<tr>
-						<td>12121</td>
-						<td>12121</td>
-						<td>12121</td>
-						<td>12121</td>
-						<td>12121</td>
-						<td>12121</td>
-						<td>12121</td>
-						<td>12121</td>
-					</tr>
-					<tr>
-						<td>12121</td>
-						<td>12121</td>
-						<td>12121</td>
-						<td>12121</td>
-						<td>12121</td>
-						<td>12121</td>
-						<td>12121</td>
-						<td>12121</td>
-					</tr>
-				<tbody>	
-					
+					<tbody>
 			</table>
-			<section class="new-project show">
+			
+		</section>
+		<section class="new-project show">
 				<div class="clickable"></div>
 				<div class="right-panel">
 					<form name="project">
-						<div class="wrap-input">
-							<input type="text" name="name" placeholder="project name">
+						<input type="text" name="name" placeholder="project name">
+						<input type="text" name="dueDate" placeholder="due date">
+						<input type="text" name="createdDate" placeholder="created">
+						<input type="text" name="members" placeholder="members">
+						<div class="custom-select" data-value="customer">	
+							<span data-value="customerS">customer</span>
+							<ul class="dropdown">
+								<li data-value="Jonn">Jonn</li>
+								<li data-value="David">David</li>
+								<li>2</li>
+								<li>4</li>
+							</ul>
 						</div>
-						<div class="wrap-input">
-							<input type="text" name="name">
+						<div class="custom-select" data-value="type">	
+							<span data-value="type">type</span>
+							<ul class="dropdown">
+								<li data-value="5">5</li>
+								<li data-value="6">6</li>
+								<li>2</li>
+								<li>4</li>
+							</ul>
 						</div>
-						<div class="wrap-input">
-							<input type="text" name="name">
-						</div>
-						<div class="wrap-input">
-							<input type="text" name="name">
-						</div>
-						<div class="wrap-input">
-							<input type="text" name="name">
-						</div>
-						<div class="wrap-input">
-							<div class="custom-select" data-value="customer">	
-								<span data-value="customerS">customer</span>
-								<ul class="dropdown">
-									<li data-value="Jonn">Jonn</li>
-									<li data-value="David">David</li>
-									<li>2</li>
-									<li>4</li>
-								</ul>
-							</div>
-						</div>
-						<div class="wrap-input">
-							<div class="custom-select" data-value="type">	
-								<span data-value="type">type</span>
-								<ul class="dropdown">
-									<li data-value="5">5</li>
-									<li data-value="6">6</li>
-									<li>2</li>
-									<li>4</li>
-								</ul>
-							</div>
-						</div>
-						<div class="wrap-input">
-							<input type="submit" value="create">
-						</div>
+						<input type="submit" value="create">
 					</form>
 				</div>
 			</section>
-		</section>
 	</section>
 		
 	<footer>
