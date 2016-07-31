@@ -70,17 +70,17 @@
 						<input type="text" class="date" name="dueDate" placeholder="due date">
 						<input type="text" class="date" name="createdDate" placeholder="created">
 						<input type="text" name="members" placeholder="members:">
-						<div class="custom-select" data-value="customer">	
-							<span data-value="customer">customer</span>
+						<div class="select">
+							<input type="text" class="custom" placeholder="type" onfocus="this.blur()" readonly="readonly">
 							<ul class="dropdown">
-								<li data-value="Jonn">Jonn</li>
-								<li data-value="David">David</li>
+								<li data-value="5">DAd</li>
+								<li data-value="6">res</li>
 								<li>2</li>
 								<li>4</li>
 							</ul>
 						</div>
-						<div class="custom-select" data-value="type">	
-							<span data-value="type">type</span>
+						<div class="select">
+							<input type="text" class="custom" placeholder="customer"  onfocus="this.blur()" readonly="readonly">
 							<ul class="dropdown">
 								<li data-value="5">5</li>
 								<li data-value="6">6</li>
@@ -88,7 +88,7 @@
 								<li>4</li>
 							</ul>
 						</div>
-						<input type="submit" value="create">
+						<input type="submit" value="create" >
 					</form>
 				</div>
 			</section>
@@ -102,7 +102,7 @@
 		var button1 = document.querySelector('.add-project');
 		var main = document.querySelector('.clickable');
 		var menu = document.querySelector('menu');
-		var selects = document.querySelectorAll('.custom-select');
+		var selects = document.querySelectorAll('.select');
 		button.addEventListener('click', function(e){
 			var t = document.querySelector('.left-panel');
 			t.classList.toggle('show');
@@ -110,18 +110,18 @@
 			console.log(t);	
 		});
 
-		for(var i = 0; i <selects.length;i++){
+		for(var i = 0; i <selects.length; i++){
 			selects[i].addEventListener('click', function(e){
-				var attr;
 				e.stopPropagation();
+				if(e.target.tagName !== 'INPUT'){
+					this.children[0].value = e.target.innerText;	
+				}
+
 				this.classList.toggle('active');
-				attr = e.target.getAttribute('data-value');
-				this.setAttribute('data-value', attr);
-				this.children[0].setAttribute('data-value', attr);
-				this.children[0].innerText = attr;
+				
+				
 			});	
-		}
-		
+		}		
 
 		document.addEventListener('click', function(e){
 			for(var i = 0; i <selects.length;i++){

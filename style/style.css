@@ -97,15 +97,21 @@ input[type="submit"]{
  input[type="submit"]:hover{
 	cursor: pointer;
  }
+ input[disabled]{
+	opacity: .5;
+ }
+ input[disabled]:hover{
+	cursor: unset;
+ }
  input.date{
  	background: #221203 url("../img/data-pick.png") no-repeat;
  	background-position: 98% 10%;
- 	background-size: 12% 50%;
+ 	background-size: 12% 60%;
  }
  input.search{
  	background: #221203 url("../img/lupa.png") no-repeat;
  	background-position: 98% 10%;
- 	background-size: 12% 50%;
+ 	background-size: 12% 60%;
  }
 .group-checkbox{
 	display: -ms-flexbox;
@@ -169,21 +175,25 @@ input[type="submit"]{
 	height: 95%;
 	margin: auto;
 }
-.custom-select{
-	display: flex;	
-	align-items: center;
-	padding-left: 20px;
+.select{
 	position: relative;
-	background: #221203;
 	height: 7%;
-	margin: 10% 0;
-	border-bottom: #d77016 2px solid; 
-	cursor: pointer;
+	margin-top: 10%;
+	cursor: pointer;	
 }
-.custom-select:first-of-type{
+.select:first-of-type{
 	margin-top: 5%;
 }
-.custom-select:after{
+input.custom{
+	margin: 0;
+	position: relative;
+	background: #221203;
+	height: 100%;
+	border-bottom: #d77016 2px solid; 
+	cursor: pointer;
+	
+}
+.select:after{
 	content: "";
 	display: block;
 	right: 1%;
@@ -194,15 +204,15 @@ input[type="submit"]{
 	background: url("../img/expand.png") no-repeat center;
 	background-size: cover;	
 }
-.custom-select.active:after{
+.select.active:after{
 	-webkit-transform: rotate(-180deg);
 	-ms-transform: rotate(-180deg);
 	-moz-transform: rotate(-180deg);
 }
-.custom-select.active{
+.select.active input{
 	border-bottom: white 2px solid;
 }
-.custom-select.active .dropdown{
+.select.active .dropdown{
 	display: block;
 }
 .dropdown{
