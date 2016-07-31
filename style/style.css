@@ -1,7 +1,9 @@
+@import url(https://fonts.googleapis.com/css?family=Indie+Flower|Handlee);
+
 body, html{
 	height: 100%;
 	color:white;
-	font-family: Calibri;
+	font-family: 'Handlee', Calibri;
 	margin: 0;
 	padding: 0;
 	min-width: 1024px;
@@ -65,8 +67,10 @@ menu{
 	height: 100%;
 }
 input[type="text"]{
+	font-family: 'Handlee', Calibri;
 	box-sizing: border-box;
 	color:white;
+	font-family: 
 	font-size: .9em;
 	background: #221203;
 	width: 100%;
@@ -79,6 +83,7 @@ input[type="text"]{
 	text-transform: uppercase;
 }
 input[type="submit"]{
+	font-family: 'Handlee', Calibri;
  	font-size: .9em;
 	height: 7%;
 	width: 100%;
