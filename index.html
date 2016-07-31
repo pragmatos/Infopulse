@@ -28,7 +28,7 @@
 				<input type="text" name="date" class="date" placeholder="12-04-16" pattern="\d{1,2}/\d{1,2}/\d{4}">
 			</menu>
 		</div>
-		<section class="dashboard">
+		<section class="dashboard small">
 			<table>
 				<thead>
 					<tr>
@@ -104,8 +104,9 @@
 		var selects = document.querySelectorAll('.select');
 		button.addEventListener('click', function(e){
 			var t = document.querySelector('.left-panel');
+			var s = document.querySelector('.dashboard');
 			t.classList.toggle('show');
-
+			s.classList.toggle('small');
 			console.log(t);	
 		});
 
