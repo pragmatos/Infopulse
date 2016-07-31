@@ -15,12 +15,6 @@ body, html{
 	height: 95%;		
 	
 }
-header{
-	position: absolute;
-	width: 100%;
-	min-width: 1024px;
-	height: 5%;
-}
 button{
 	border:none;
 	outline: none;
@@ -32,7 +26,7 @@ button:hover{
 .toggle-menu{
 	display: block;
 	width: 2%;
-	
+	position: absolute;
 	padding: 0;
 	margin-left: 1%;
 	margin-top: 1%;
