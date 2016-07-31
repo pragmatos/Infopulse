@@ -26,7 +26,7 @@
 					<input id="support" type="checkbox"/>
 					<label for="support">support</label>		
 				</div>
-				<input type="text" name="date">
+				<input type="text" name="date" class="datepicker" placeholder="12-04-16" pattern="\d{1,2}/\d{1,2}/\d{4}">
 			</menu>
 		</div>
 		<section class="dashboard">
@@ -41,7 +41,7 @@
 						<th>6</th>
 						<th>7</th>
 						<th>
-							<button class="add-custumer">
+							<button class="add-project">
 								<img src="img/add-new.png" alt="">
 							</button>
 						</th>
@@ -66,12 +66,12 @@
 				<div class="clickable"></div>
 				<div class="right-panel">
 					<form name="project">
-						<input type="text" name="name" placeholder="project name">
-						<input type="text" name="dueDate" placeholder="due date">
-						<input type="text" name="createdDate" placeholder="created">
-						<input type="text" name="members" placeholder="members">
+						<input type="text" name="name" placeholder="project name:">
+						<input type="text" class="date" name="dueDate" placeholder="due date">
+						<input type="text" class="date" name="createdDate" placeholder="created">
+						<input type="text" name="members" placeholder="members:">
 						<div class="custom-select" data-value="customer">	
-							<span data-value="customerS">customer</span>
+							<span data-value="customer">customer</span>
 							<ul class="dropdown">
 								<li data-value="Jonn">Jonn</li>
 								<li data-value="David">David</li>
@@ -99,7 +99,7 @@
 	</footer>
 	<script type="text/javascript">
 		var button = document.querySelector('.toggle-menu');
-		var button1 = document.querySelector('.add-custumer');
+		var button1 = document.querySelector('.add-project');
 		var main = document.querySelector('.clickable');
 		var menu = document.querySelector('menu');
 		var selects = document.querySelectorAll('.custom-select');
@@ -112,17 +112,18 @@
 
 		for(var i = 0; i <selects.length;i++){
 			selects[i].addEventListener('click', function(e){
+				var attr;
 				e.stopPropagation();
 				this.classList.toggle('active');
-				this.dataset.value = e.target.dataset.value;
-				this.children[0].dataset.value = e.target.dataset.value;
-				this.children[0].innerText = this.dataset.value;
+				attr = e.target.getAttribute('data-value');
+				this.setAttribute('data-value', attr);
+				this.children[0].setAttribute('data-value', attr);
+				this.children[0].innerText = attr;
 			});	
 		}
 		
 
 		document.addEventListener('click', function(e){
-			e.stopPropagation();
 			for(var i = 0; i <selects.length;i++){
 				selects[i].classList.remove('active');	
 			}
