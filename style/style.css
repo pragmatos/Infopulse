@@ -97,6 +97,16 @@ input[type="submit"]{
  input[type="submit"]:hover{
 	cursor: pointer;
  }
+ input.date{
+ 	background: #221203 url("../img/data-pick.png") no-repeat;
+ 	background-position: 98% 10%;
+ 	background-size: 12% 50%;
+ }
+ input.search{
+ 	background: #221203 url("../img/lupa.png") no-repeat;
+ 	background-position: 98% 10%;
+ 	background-size: 12% 50%;
+ }
 .group-checkbox{
 	display: -ms-flexbox;
 	display: flex;
