@@ -23,7 +23,8 @@
 					<input id="mobile" type="checkbox"/>
 					<label for="mobile">mobile</label>
 					<input id="support" type="checkbox"/>
-					<label for="support">support</label>		
+					<label for="support">support</label>
+
 				</div>
 				<input type="text" name="date" class="date" placeholder="12-04-16" pattern="\d{1,2}/\d{1,2}/\d{4}">
 			</menu>
@@ -32,13 +33,13 @@
 			<table>
 				<thead>
 					<tr>
-						<th>project name</th>
-						<th>2</th>
-						<th>3</th>
-						<th>4</th>
-						<th>5</th>
-						<th>6</th>
-						<th>7</th>
+						<th>Project name</th>
+						<th>Due date</th>
+						<th>Created</th>
+						<th>Memebers</th>
+						<th>Type</th>
+						<th>Status</th>
+						<th>Customer</th>
 						<th>
 							<button class="add-project">
 								<img src="img/add-new.png" alt="">
@@ -48,16 +49,36 @@
 				</thead>
 				<tbody>		
 					<tr>
-						<td>project name</td>
-						<td>12121</td>
-						<td>12121</td>
-						<td>12121</td>
-						<td>12121</td>
-						<td>12121</td>
-						<td>12121</td>
-						<td>12121</td>
-					</tr>
-					<tbody>
+                        <td>Project name</td>
+                        <td>Due date</td>
+                        <td>Created</td>
+                        <td>Memebers</td>
+                        <td>Type</td>
+                        <td>Status</td>
+                        <td>Customer</td>
+                        <td><button class="delete-project"></button></td>
+                    </tr>
+                    <tr>
+                        <td>Test name project</td>
+                        <td>11-11-2011</td>
+                        <td>11-11-2011</td>
+                        <td>33</td>
+                        <td>Desctop</td>
+                        <td>end</td>
+                        <td>Danil</td>
+                        <td><button class="delete-project"></button></td>
+                    </tr>
+                    <tr class="overdue">
+                        <td>Project name</td>
+                        <td>Due date</td>
+                        <td>Created</td>
+                        <td>Memebers</td>
+                        <td>Type</td>
+                        <td>Status</td>
+                        <td>Customer</td>
+                        <td><button class="delete-project"></button></td>
+                    </tr>
+				</tbody>
 			</table>
 			
 		</section>

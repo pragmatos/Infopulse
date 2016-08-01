@@ -4,6 +4,7 @@ body, html{
 	height: 100%;
 	color:white;
 	font-family: 'Handlee', Calibri;
+	font-weight: lighter;
 	margin: 0;
 	padding: 0;
 	min-width: 1024px;
@@ -30,6 +31,7 @@ button:hover{
 	display: block;
 	width: 2%;
 	position: absolute;
+	z-index: 50;
 	padding: 0;
 	margin-left: 1%;
 	margin-top: 1%;
@@ -60,7 +62,7 @@ menu{
 	box-sizing: border-box;
 	visibility: hidden;
 	width: 70%;
-	min-width: 180px;
+	min-width: 190px;
 	max-width: 280px;
 	padding: 30% 0 0 0;
 	margin: 0 auto;
@@ -69,8 +71,7 @@ menu{
 input[type="text"]{
 	font-family: 'Handlee', Calibri;
 	box-sizing: border-box;
-	color:white;
-	font-family: 
+	color:white; 
 	font-size: .9em;
 	background: #221203;
 	width: 100%;
@@ -83,7 +84,7 @@ input[type="text"]{
 	text-transform: uppercase;
 }
 input[type="submit"]{
-	font-family: 'Handlee', Calibri;
+	font-family: 'Handlee', cursive;
  	font-size: .9em;
 	height: 7%;
 	width: 100%;
@@ -107,14 +108,15 @@ input[type="submit"]{
  input.date{
  	background: #221203 url("../img/data-pick.png") no-repeat;
  	background-position: 98% 10%;
- 	background-size: 12% 60%;
+ 	background-size: 14% 60%;
  }
  input.search{
  	background: #221203 url("../img/lupa.png") no-repeat;
  	background-position: 98% 10%;
- 	background-size: 12% 60%;
+ 	background-size: 14% 60%;
  }
 .group-checkbox{
+	font-size: .9em;
 	display: -ms-flexbox;
 	display: flex;
 	-ms-flex-wrap: wrap;
@@ -139,7 +141,7 @@ input[type="submit"]{
 	display: inline-block;
 	margin-left: 5%;
 	height: 50%;
-	width:35%;
+	width:30%;
 	background: url("../img/unchecked.png") no-repeat;
 	background-size: cover;
 }
@@ -159,6 +161,7 @@ input[type="submit"]{
 	min-height: 640px;
 	width: 0;
 	transition: 0.5s linear;
+	z-index: 100;
 }
 .new-project.show{
 	width: 100%;
@@ -239,6 +242,8 @@ input.custom{
 }
 
 .dashboard{
+	box-sizing: border-box;
+	padding: 7% 0 0 2%;
 	width: 100%;
 	background: #0a0b0d;
 	height: 100%;
@@ -248,59 +253,72 @@ input.custom{
 	width: 80%;
 }
 table{
-	table-layout: fixed;
-	margin:2% auto;
-	padding: 2% 2%;
-	width: 100%;
-	height: 100%;
+	font-size: .9em;
+	width: 98%;	
+	text-align: center;
 	border-collapse: collapse;
-
-}
-
-
-thead,tbody{
-	display: block;
-	width: 96%;
-	margin: 0 auto;
 }
 thead{
+	position: fixed;
+	display: block;
+	top: 0;
+	min-width: 820px;
+	padding-top: 3%;
+	margin-right: 2%;
+	color: #e67817;
 	border-bottom: 1px solid #737374;
-
 }
 tbody{
-	box-sizing: border-box;
-	height: 90%;
-	overflow-y:auto;
+	display: table;
 }
-tbody:last-of-type{
-	height: 0;	
-}
-thead th{
-	text-align: center;
-	width: 14%;
-	padding: 20px; 
-}
-thead th:first-child{
-	background: url("../img/border-th.png") no-repeat right;
-}
-tbody tr:nth-of-type(2n){
-	background: green;		
-}
-tbody tr:first-child{
-	
-}
-tbody tr:hover{
-	background: red;
-}
-tbody td:first-child{	
-	background: url("../img/border-td.png") no-repeat right;
+table td, table th{
+	width: 200px;
+	padding: 1% 2%;
 }
 table td{
-	width: 16%;
-	padding: 20px; 
-	text-align: center;
+	padding: 1.5% 2%;
 }
 
+table td:first-child,
+table th:first-child{
+	width: 280px;
+}
+table td:last-child,
+table th:last-child{
+	width: 120px;
+}
+table th:first-child{
+	background: url("../img/border-th.png") no-repeat right center;
+	background-size: 1% 50%;
+}
+table td:first-child{
+	background: url("../img/border-td.png") no-repeat right center;
+	background-size: 1% 50%;
+}
+
+tbody tr:nth-child(even) {
+    background: #0f1012;
+}
+tbody tr:hover {
+    background-color: #353E44;
+}
+tbody tr.overdue{
+	background: #6f0d0f;
+}
+tbody tr.overdue td{
+	background: none;
+}
+
+tbody tr:hover .delete-project {
+    opacity: 1;
+}
+.delete-project{
+	background: url('../img/delete.png') no-repeat;
+    background-size: 100%;
+    width: 36px;
+    height: 34px;
+    opacity: .4;
+}
 footer{
 	display: flex;
 	display: -ms-flexbox;
