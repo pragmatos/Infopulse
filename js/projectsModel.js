@@ -1,4 +1,4 @@
-(function(app){
+(function(window){
     'use strict';
 
     function Model(projects){
@@ -9,6 +9,6 @@
         this.projects.push(project);    
     }
 
-    app = app || {};
-    app.ProjectsModel = Model;
-})(window.app);
+    window.app = window.app || {};
+    window.app.ProjectsModel = Model;
+})(window);
