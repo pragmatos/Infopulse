@@ -1,10 +1,11 @@
 (function(){
     "use strict";
-    function Manager(){
+    function Manager(data){
+        this.repository = new app.Repository(data);
         this.model = new app.ProjectsModel([{name:"test"}]);
     }
+    
+    var manager = new Manager([]);
 
-    var manager = new Manager();
-
-    console.log(manager.model);
+    console.log(app.Lib.data);
 })();
