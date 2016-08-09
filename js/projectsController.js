@@ -9,11 +9,20 @@
         that.view.bind('newProject', function(project){
             that.addProject(project);
         });
+        that.view.bind('deleteProject', function(id){
+            that.removeProject(id);
+        });
     }
     Controller.prototype.addProject = function(project){
         var that = this;
-        that.model.create(project, function(){
-            console.log("saved");
+        that.model.create(project, function(newProject){
+            that.view.render('addNewProject', newProject);
+        });
+    }
+    Controller.prototype.removeProject = function(id){
+        var that = this;
+        this.model.delete(id, function(){
+            that.view.render('removeProject', id);
         });
     }
 

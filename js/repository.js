@@ -23,14 +23,31 @@
         callback(data[prop]);
     }
     Repository.prototype.save = function(project, callback){
-        var projects = JSON.parse(localStorage[this._name]).projects;
+        var data = JSON.parse(localStorage[this._name]),
+            projects = data.projects,
+            newProject = project;
 
-        project.id = new Date().getTime();
+        newProject.id = new Date().getTime();
 
-        projects.push(project);
-        localStorage[this._name] = JSON.stringify(projects);
+        projects.push(newProject);
+        data.projects = projects;
+        localStorage[this._name] = JSON.stringify(data);
 
-        callback(project);
+        callback(newProject);
+    }
+    Repository.prototype.remove = function(id, callback) {
+        var data = JSON.parse(localStorage[this._name]),
+            projects = data.projects;
+        for (var i = 0; i < projects.length; i++) {
+            console.log(id, projects[i].id);
+            if (projects[i].id === id) {
+                projects.splice(i, 1);
+                break;
+            }
+        }
+        data.projects = projects;
+        localStorage[this._name] = JSON.stringify(data);
+        callback(projects);
     }
 
 	window.app = window.app || {};

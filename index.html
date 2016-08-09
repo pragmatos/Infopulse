@@ -124,12 +124,12 @@
                 <div class="clickable"></div>
                 <div class="right-panel">
                     <form name="project" id="newProject">
-                        <input type="text" name="name" placeholder="project name:" required>
-                        <input type="text" class="date" name="dueDate" placeholder="due date" required pattern="\d{1,2}-\d{1,2}-\d{2}">
-                        <input type="text" class="date" name="createdDate"  placeholder="created" required>
-                        <input type="text" name="members" placeholder="members:" required>
+                        <input type="text" name="name" placeholder="project name:" required value="test">
+                        <input type="text" class="date" name="dueDate" placeholder="due date" value="10-10-16" required pattern="\d{1,2}-\d{1,2}-\d{2}">
+                        <input type="text" class="date" name="createdDate" value="11-07-16"  placeholder="created" required>
+                        <input type="text" name="members" placeholder="members:" value="test!!" required>
                         <div class="select">
-                            <input type="text" class="custom" name="type" placeholder="type" required onfocus="this.blur()">
+                            <input type="text" class="custom" name="type" value="DAD" placeholder="type" required onfocus="this.blur()">
                             <ul class="dropdown">
                                 <li data-value="5">DAd</li>
                                 <li data-value="6">res</li>
@@ -138,7 +138,7 @@
                             </ul>
                         </div>
                         <div class="select">
-                            <input type="text" class="custom" name="customer" placeholder="customer" required  onfocus="this.blur()">
+                            <input type="text" class="custom" value="ASDF" name="customer" placeholder="customer" required  onfocus="this.blur()">
                             <ul class="dropdown">
                                 <li data-value="5">5</li>
                                 <li data-value="6">6</li>

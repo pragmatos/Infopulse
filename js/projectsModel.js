@@ -3,17 +3,20 @@
 
     function Model(repository){
         this.storage = repository;
+        this.today = new Date().getTime();
     }
 
     Model.prototype.create = function(project, callback){
         this.storage.save(project, callback);
     }
-    Model.prototype.isValid = function(project, callback){
-        console.log(project);
-        for(var key in project){
-           console.log("key: "+ key, "Value: "+ project[key]);
-        }
-        callback(null);
+    Model.prototype.delete = function(id, callback){
+        this.storage.remove(id, callback);
+    }
+    Model.prototype.isActive = function(project){
+        return new Date(project.dueDate).getTime() > this.today;
+    }
+    Model.prototype.getTimeStamp = function(date){
+
     }
 
     window.app = window.app || {};
