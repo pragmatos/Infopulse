@@ -45,82 +45,12 @@
                         </th>
                     </tr>
                 </thead>
-                <tbody>     
-                    <tr>
-                        <td>Project name</td>
-                        <td>Due date</td>
-                        <td>Created</td>
-                        <td>Memebers</td>
-                        <td>Type</td>
-                        <td>Status</td>
-                        <td>Customer</td>
-                        <td><button class="delete-project"></button></td>
-                    </tr>
-                    <tr>
-                        <td>Test name project</td>
-                        <td>11-11-2011</td>
-                        <td>11-11-2011</td>
-                        <td>33</td>
-                        <td>Desctop</td>
-                        <td>end</td>
-                        <td>Danil</td>
-                        <td><button class="delete-project"></button></td>
-                    </tr>
-                     <tr>
-                        <td>Test name project</td>
-                        <td>11-11-2011</td>
-                        <td>11-11-2011</td>
-                        <td>33</td>
-                        <td>Desctop</td>
-                        <td>end</td>
-                        <td>Danil</td>
-                        <td><button class="delete-project"></button></td>
-                    </tr>
-                    <tr class="overdue">
-                        <td>Project name</td>
-                        <td>Due date</td>
-                        <td>Created</td>
-                        <td>Memebers</td>
-                        <td>Type</td>
-                        <td>Status</td>
-                        <td>Customer</td>
-                        <td><button class="delete-project"></button></td>
-                    </tr>
-                     <tr>
-                        <td>Test name project</td>
-                        <td>11-11-2011</td>
-                        <td>11-11-2011</td>
-                        <td>33</td>
-                        <td>Desctop</td>
-                        <td>end</td>
-                        <td>Danil</td>
-                        <td><button class="delete-project"></button></td>
-                    </tr>
-                     <tr>
-                        <td>Test name project</td>
-                        <td>11-11-2011</td>
-                        <td>11-11-2011</td>
-                        <td>33</td>
-                        <td>Desctop</td>
-                        <td>end</td>
-                        <td>Danil</td>
-                        <td><button class="delete-project"></button></td>
-                    </tr>
-                    <tr>
-                        <td>Project name</td>
-                        <td>Due date</td>
-                        <td>Created</td>
-                        <td>Memebers</td>
-                        <td>Type</td>
-                        <td>Status</td>
-                        <td>Customer</td>
-                        <td><button class="delete-project"></button></td>
-                    </tr>                    
+                <tbody>
                 </tbody>
             </table>
             
         </section>
-        <section class="new-project show">
+        <section class="new-project">
                 <div class="clickable"></div>
                 <div class="right-panel">
                     <form name="project" id="newProject">
@@ -130,20 +60,14 @@
                         <input type="text" name="members" placeholder="members:" value="test!!" required>
                         <div class="select">
                             <input type="text" class="custom" name="type" value="DAD" placeholder="type" required onfocus="this.blur()">
-                            <ul class="dropdown">
-                                <li data-value="5">DAd</li>
-                                <li data-value="6">res</li>
-                                <li>2</li>
-                                <li>4</li>
+                            <ul class="dropdown" id="types">
+
                             </ul>
                         </div>
                         <div class="select">
                             <input type="text" class="custom" value="ASDF" name="customer" placeholder="customer" required  onfocus="this.blur()">
-                            <ul class="dropdown">
-                                <li data-value="5">5</li>
-                                <li data-value="6">6</li>
-                                <li>2</li>
-                                <li>4</li>
+                            <ul class="dropdown" id="customers">
+
                             </ul>
                         </div>
                         <input type="submit" name="add" disabled value="create" >
@@ -196,11 +120,12 @@
             t.classList.remove('show');
             console.log(t); 
         },true);
+        /*
         button1.addEventListener('click', function(e){
             var t = document.querySelector('.new-project');
             t.classList.toggle('show');
             console.log(t); 
-        });
+        });*/
     </script>
     <script type="text/javascript" src="js/helpers.js"></script>
     <script type="text/javascript" src="js/repository.js"></script>

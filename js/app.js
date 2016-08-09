@@ -7,6 +7,7 @@
             that.model = new app.ProjectsModel(that.repository);
             that.view = new app.ProjectsView(that.model);
             that.controller = new app.ProjectsController(that.model, that.view);
+            that.controller.printAllProjects();
         });
     }
 

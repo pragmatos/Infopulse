@@ -1,12 +1,56 @@
 {
   "projects": [
+    {"name":"test",
+      "dueDate":"10-10-16",
+      "createdDate":"11-07-16",
+      "members":"test!!",
+      "type":"TYPE1",
+      "customer":"JACK",
+      "id":1470782602006
+    },
+    {"name":"test2",
+      "dueDate":"10-10-16",
+      "createdDate":"11-07-16",
+      "members":"test!!",
+      "type":"TYPE1",
+      "customer":"JACK",
+      "id":1470782602001
+    }
+  ],
+  "types":[
+    {
+      "id":0,
+      "name": "Type1"
+    },
+    {
+      "id":1,
+      "name": "Type2"
+    },
+    {
+      "id":2,
+      "name": "Type3"
+    },
+    {
+      "id":3,
+      "name": "Type4"
+    }
+  ],
+  "customers":[
     {
       "id": 0,
-      "name": "Project name"
+      "name": "David"
     },
     {
       "id": 1,
-      "name": "Project name"
+      "name": "John"
+    },
+    {
+      "id": 2,
+      "name": "Jack"
+    },
+    {
+      "id": 3,
+      "name": "Bob"
     }
   ]
 }

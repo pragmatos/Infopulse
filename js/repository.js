@@ -39,7 +39,6 @@
         var data = JSON.parse(localStorage[this._name]),
             projects = data.projects;
         for (var i = 0; i < projects.length; i++) {
-            console.log(id, projects[i].id);
             if (projects[i].id === id) {
                 projects.splice(i, 1);
                 break;

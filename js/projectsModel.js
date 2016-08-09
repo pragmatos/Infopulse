@@ -18,6 +18,15 @@
     Model.prototype.getTimeStamp = function(date){
 
     }
+    Model.prototype.getTypes = function(callback){
+        this.storage.getBy('types', callback);
+    }
+    Model.prototype.getCustomers = function(callback){
+        this.storage.getBy('customers', callback);
+    }
+    Model.prototype.getProjects = function(callback){
+        this.storage.getBy('projects', callback);
+    }
 
     window.app = window.app || {};
     window.app.ProjectsModel = Model;

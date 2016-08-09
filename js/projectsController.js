@@ -12,6 +12,9 @@
         that.view.bind('deleteProject', function(id){
             that.removeProject(id);
         });
+        that.view.bind('openNewProject', function(project){
+            that.addProject(project);
+        });
     }
     Controller.prototype.addProject = function(project){
         var that = this;
@@ -23,6 +26,12 @@
         var that = this;
         this.model.delete(id, function(){
             that.view.render('removeProject', id);
+        });
+    }
+    Controller.prototype.printAllProjects = function(){
+        var that = this;
+        that.model.getProjects(function(projects){
+            that.view.render('printAllProjects', projects);
         });
     }
 

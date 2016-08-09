@@ -5,6 +5,8 @@
         this.model = model;
 
         this.$projects = document.querySelector('.dashboard tbody');
+        this.$buttonNewProject = document.querySelector('.add-project');
+        this.$rightPanel = document.querySelector('.new-project');
         this.$newProject = document.querySelector('#newProject');
         this.$submitProject = this.$newProject['add'];
     }
@@ -17,6 +19,8 @@
             case 'deleteProject':
                 that._bindRemoveItem(handler);
                 break;
+            case 'openNewProject':
+                that._bindOpenNewProject();
         }
     }
     View.prototype.render = function(command, parameter){
@@ -27,6 +31,9 @@
             },
             removeProject: function(){
                 that._removeProject(parameter);
+            },
+            printAllProjects: function(){
+                that._printProjects(parameter);
             }
         }
         commands[command]();
@@ -73,6 +80,7 @@
                     that.$newProject[i].value = "";
                 }
                 that.$submitProject.disabled = true;
+                that.$rightPanel.classList.remove('show');
                 handler(project);
             }
 
@@ -90,6 +98,36 @@
                 handler(parseInt(e.target.getAttribute('data-id')));
             }
 
+        });
+    }
+    View.prototype._bindOpenNewProject = function(){
+        var that = this;
+
+        that.$buttonNewProject.addEventListener('click', function(){
+            that.$rightPanel.classList.toggle('show');
+            that.model.getTypes(function(data){
+                that._printSelect('#types', data);
+            });
+            that.model.getCustomers(function(data){
+                that._printSelect('#customers', data);
+            });
+        });
+    }
+    View.prototype._printProjects = function(projects){
+        var that = this;
+        projects.forEach(function(project){
+            that._appendProject(project);
+        });
+    }
+    View.prototype._printSelect = function(selector, data){
+        var select = document.querySelector(selector),
+            li;
+        select.innerHTML = '';
+        data.forEach(function(item){
+            li = document.createElement('li');
+            li.innerText = item.name;
+            li.setAttribute('data-value', item.name);
+            select.appendChild(li);
         });
     }
 
