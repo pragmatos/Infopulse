@@ -26,7 +26,7 @@
                     <label for="support">support</label>
 
                 </div>
-                <input type="text" name="date" class="date" placeholder="12-04-16" pattern="\d{1,2}/\d{1,2}/\d{4}">
+                <input type="text" name="date" class="date" placeholder="12-04-16" pattern="\d{1,2}-\d{1,2}-\d{2}">
             </menu>
         </div>
         <section class="dashboard small">
@@ -123,13 +123,13 @@
         <section class="new-project show">
                 <div class="clickable"></div>
                 <div class="right-panel">
-                    <form name="project">
-                        <input type="text" name="name" placeholder="project name:">
-                        <input type="text" class="date" name="dueDate" placeholder="due date">
-                        <input type="text" class="date" name="createdDate" placeholder="created">
-                        <input type="text" name="members" placeholder="members:">
+                    <form name="project" id="newProject">
+                        <input type="text" name="name" placeholder="project name:" required>
+                        <input type="text" class="date" name="dueDate" placeholder="due date" required pattern="\d{1,2}-\d{1,2}-\d{2}">
+                        <input type="text" class="date" name="createdDate"  placeholder="created" required>
+                        <input type="text" name="members" placeholder="members:" required>
                         <div class="select">
-                            <input type="text" class="custom" placeholder="type" onfocus="this.blur()" readonly="readonly">
+                            <input type="text" class="custom" name="type" placeholder="type" required onfocus="this.blur()">
                             <ul class="dropdown">
                                 <li data-value="5">DAd</li>
                                 <li data-value="6">res</li>
@@ -138,7 +138,7 @@
                             </ul>
                         </div>
                         <div class="select">
-                            <input type="text" class="custom" placeholder="customer"  onfocus="this.blur()" readonly="readonly">
+                            <input type="text" class="custom" name="customer" placeholder="customer" required  onfocus="this.blur()">
                             <ul class="dropdown">
                                 <li data-value="5">5</li>
                                 <li data-value="6">6</li>
@@ -146,7 +146,7 @@
                                 <li>4</li>
                             </ul>
                         </div>
-                        <input type="submit" value="create" >
+                        <input type="submit" name="add" disabled value="create" >
                     </form>
                 </div>
             </section>
@@ -173,7 +173,8 @@
             selects[i].addEventListener('click', function(e){
                 e.stopPropagation();
                 if(e.target.tagName !== 'INPUT'){
-                    this.children[0].value = e.target.innerText;    
+                    this.children[0].value = e.target.innerText;
+                    this.children[0].dispatchEvent(new Event('change',{bubbles:true}));
                 }
 
                 this.classList.toggle('active');
@@ -204,6 +205,9 @@
     <script type="text/javascript" src="js/helpers.js"></script>
     <script type="text/javascript" src="js/repository.js"></script>
     <script type="text/javascript" src="js/projectsModel.js"></script>
+    <script type="text/javascript" src="js/projectsView.js"></script>
+    <script type="text/javascript" src="js/projectsController.js"></script>
+
     <script type="text/javascript" src="js/app.js"></script>
 </body>
 </html>

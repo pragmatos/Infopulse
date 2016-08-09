@@ -68,6 +68,9 @@ menu{
     margin: 0 auto;
     height: 100%;
 }
+input[type="text"]:invalid{
+    border-bottom: red 2px solid;
+}
 input[type="text"]{
     font-family: 'Handlee', Calibri;
     box-sizing: border-box;
@@ -79,7 +82,7 @@ input[type="text"]{
     margin: 5% 0;
     border: none;
     padding: 10px;
-    border-bottom: #d77016 2px solid; 
+    border-bottom: #d77016 2px solid;
     outline: none;
     text-transform: uppercase;
 }
