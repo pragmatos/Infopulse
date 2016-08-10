@@ -12,8 +12,8 @@
         that.view.bind('deleteProject', function(id){
             that.removeProject(id);
         });
-        that.view.bind('openNewProject', function(project){
-            that.addProject(project);
+        that.view.bind('sortProjects', function(project){
+            that.sortProjects(project);
         });
     }
     Controller.prototype.addProject = function(project){
@@ -27,6 +27,10 @@
         this.model.delete(id, function(){
             that.view.render('removeProject', id);
         });
+    }
+    Controller.prototype.sortProjects = function(paramSort){
+        var that = this;
+            //that.view.render('removeProject', id);
     }
     Controller.prototype.printAllProjects = function(){
         var that = this;

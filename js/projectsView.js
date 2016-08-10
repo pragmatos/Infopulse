@@ -4,24 +4,29 @@
     function View(model){
         this.model = model;
 
+        this.newProject = new app.ViewNewProject(document.querySelector('#newProject'), model);
+
         this.$projects = document.querySelector('.dashboard tbody');
-        this.$buttonNewProject = document.querySelector('.add-project');
         this.$rightPanel = document.querySelector('.new-project');
-        this.$newProject = document.querySelector('#newProject');
-        this.$submitProject = this.$newProject['add'];
-        this.$createdDate = document.querySelector('input[name="createdDate"]');
+        this.$thead = document.querySelector('.dashboard thead');
+
     }
     View.prototype.bind = function(eventName, handler){
         var that = this;
         switch (eventName) {
             case 'newProject':
-                that._bindAddProjectEvents(handler);
+                this.newProject.onSubmit(handler);
                 break;
+
             case 'deleteProject':
                 that._bindRemoveItem(handler);
                 break;
             case 'openNewProject':
-                that._bindOpenNewProject();
+                //that._bindOpenNewProject();
+                break;
+            case 'sortProjects':
+                that._bindOnSort(handler);
+                break;
         }
     }
     View.prototype.render = function(command, parameter){
@@ -42,6 +47,12 @@
     View.prototype._removeProject = function(id){
         var tr = document.querySelector('tr[data-id="'+id+'"]');
         this.$projects.removeChild(tr);
+    }
+    View.prototype._bindOnSort = function(handler){
+        var that = this;
+        that.$thead.addEventListener('click',function(e){
+            console.log(e);
+        });
     }
     View.prototype._appendProject = function(project){
         var printObj = {
@@ -69,31 +80,6 @@
         }
 
     }
-    View.prototype._bindAddProjectEvents = function(handler){
-        var that = this;
-        that.$newProject.addEventListener('submit', function(e){
-            var project = {},
-                length = that.$newProject.length-1;
-            e.preventDefault();
-            if(that.$newProject.checkValidity()){
-                for(var i = 0; i < length; i++){
-                    project[that.$newProject[i].name] = that.$newProject[i].value;
-                    that.$newProject[i].value = "";
-                }
-                project.dueDate = that.model.convertDate(project.dueDate);
-                project.createdDate = that.model.convertDate(project.createdDate);
-                that.$submitProject.disabled = true;
-                that.$rightPanel.classList.remove('show');
-                handler(project);
-            }
-
-        });
-        that.$newProject.addEventListener('change', function(e){
-            if(that.$newProject.checkValidity()){
-                that.$submitProject.disabled = false;
-            }
-        });
-    }
     View.prototype._bindRemoveItem = function(handler){
         var that = this;
         that.$projects.addEventListener('click', function(e){
@@ -101,20 +87,6 @@
                 handler(parseInt(e.target.getAttribute('data-id')));
             }
 
-        });
-    }
-    View.prototype._bindOpenNewProject = function(){
-        var that = this;
-
-        that.$buttonNewProject.addEventListener('click', function(){
-            that.$createdDate.value = that.model.getCurrentDate();
-            that.$rightPanel.classList.toggle('show');
-            that.model.getTypes(function(data){
-                that._printSelect('#types', data);
-            });
-            that.model.getCustomers(function(data){
-                that._printSelect('#customers', data);
-            });
         });
     }
     View.prototype._printProjects = function(projects){
