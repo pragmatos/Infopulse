@@ -9,6 +9,7 @@
         this.$rightPanel = document.querySelector('.new-project');
         this.$newProject = document.querySelector('#newProject');
         this.$submitProject = this.$newProject['add'];
+        this.$createdDate = document.querySelector('input[name="createdDate"]');
     }
     View.prototype.bind = function(eventName, handler){
         var that = this;
@@ -106,6 +107,7 @@
         var that = this;
 
         that.$buttonNewProject.addEventListener('click', function(){
+            that.$createdDate.value = that.model.getCurrentDate();
             that.$rightPanel.classList.toggle('show');
             that.model.getTypes(function(data){
                 that._printSelect('#types', data);

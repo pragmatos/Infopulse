@@ -33,7 +33,9 @@
     Model.prototype.getProjects = function(callback){
         this.storage.getBy('projects', callback);
     }
-
+    Model.prototype.getCurrentDate = function(){
+        return this.getNormalDate(this.today);
+    }
     window.app = window.app || {};
     window.app.ProjectsModel = Model;
 })(window);
