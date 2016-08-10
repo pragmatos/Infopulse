@@ -12,4 +12,14 @@
     }
 
     var manager = new Manager('customers');
+
+    (function () {
+        var dateElements = document.getElementsByClassName('date');
+        Array.prototype.forEach.call(dateElements, function (element) {
+            new Pikaday({
+                field: element,
+                format: "DD-MM-YYYY"
+            })
+        })
+    })();
 })();

@@ -1,16 +1,16 @@
 {
   "projects": [
     {"name":"test",
-      "dueDate":"10-10-16",
-      "createdDate":"11-07-16",
+      "dueDate":1444424400000,
+      "createdDate":1468184400000,
       "members":"test!!",
       "type":"TYPE1",
       "customer":"JACK",
       "id":1470782602006
     },
     {"name":"test2",
-      "dueDate":"10-10-16",
-      "createdDate":"11-07-16",
+      "dueDate":1476046800000,
+      "createdDate":1468184400000,
       "members":"test!!",
       "type":"TYPE1",
       "customer":"JACK",

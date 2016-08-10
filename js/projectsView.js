@@ -45,8 +45,8 @@
     View.prototype._appendProject = function(project){
         var printObj = {
             name: project.name,
-            dueDate: project.dueDate,
-            createdDate: project.createdDate,
+            dueDate: this.model.getNormalDate(project.dueDate),
+            createdDate: this.model.getNormalDate(project.createdDate),
             members: project.members,
             type: project.type,
             status: this.model.isActive(project),
@@ -62,7 +62,7 @@
         }
         cell = row.insertCell(index);
         cell.innerHTML = '<button data-id="'+project.id+'" class="delete-project"></button>';
-        row.setAttribute("data-id",project.id);
+        row.setAttribute("data-id", project.id);
         if(!printObj['status']){
             row.classList.add('overdue');
         }
@@ -79,6 +79,8 @@
                     project[that.$newProject[i].name] = that.$newProject[i].value;
                     that.$newProject[i].value = "";
                 }
+                project.dueDate = that.model.convertDate(project.dueDate);
+                project.createdDate = that.model.convertDate(project.createdDate);
                 that.$submitProject.disabled = true;
                 that.$rightPanel.classList.remove('show');
                 handler(project);
@@ -91,7 +93,7 @@
             }
         });
     }
-    View.prototype._bindRemoveItem= function(handler){
+    View.prototype._bindRemoveItem = function(handler){
         var that = this;
         that.$projects.addEventListener('click', function(e){
             if(e.target.getAttribute('data-id')){
