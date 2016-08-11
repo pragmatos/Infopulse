@@ -36,6 +36,24 @@
     Model.prototype.getCurrentDate = function(){
         return this.getNormalDate(this.today);
     }
+    Model.prototype.filterBy = function(params, callback){
+        var result = [];
+            this.storage.getBy('projects',function(projects){
+                console.log(params.type.length);
+                if(params.type.length){
+                    result = projects.filter(function(item){
+                        if(params.type.indexOf(item['type'])>-1){
+                            return true;
+                        }
+                    });
+                    callback(result);
+                    return;
+                }
+                callback(projects);
+
+            });
+
+    }
     window.app = window.app || {};
     window.app.ProjectsModel = Model;
 })(window);

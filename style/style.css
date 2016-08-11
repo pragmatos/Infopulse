@@ -183,6 +183,9 @@ input[type="submit"]{
     height: 95%;
     margin: auto;
 }
+form[name="filter"]{
+    height: 100%;
+}
 .select{
     position: relative;
     height: 7%;
