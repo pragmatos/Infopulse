@@ -22,13 +22,13 @@
                 this.projects.onRemoveItem(handler);
                 break;
             case 'sortProjects':
-                that._bindOnSort(handler);
+                this.projects.onSort(handler);
                 break;
             case 'filterProjects':
                 this.filter.onFilter(handler);
                 break;
         }
-    }
+    };
     View.prototype.render = function(command, parameter){
         var that = this;
         var commands = {
@@ -40,6 +40,10 @@
             },
             printAllProjects: function(){
                 that.projects.printProjects(parameter);
+                that.projects.sortProjects(parameter);
+            },
+            sortProject: function(){
+                that.projects.sortProjects(parameter);
             }
         }
         commands[command]();

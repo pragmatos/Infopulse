@@ -32,8 +32,7 @@
         });
     };
     Controller.prototype.sortProjects = function(paramSort){
-        var that = this;
-            //that.view.render('removeProject', id);
+        this.view.render('sortProject', paramSort);
     };
     Controller.prototype.filterProjects = function(params){
         this.model.filterBy(params, function(projects){
