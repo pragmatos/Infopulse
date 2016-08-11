@@ -290,6 +290,9 @@ input.custom{
     width: 200px;
     padding: 1% 2%;
 }
+.dashboard table th:hover{
+    cursor: pointer;
+}
 .dashboard table th.desc:after{
     content: '\2B06';
     font-size: 1.2em;
