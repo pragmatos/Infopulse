@@ -4,149 +4,66 @@
     <meta charset="UTF-8">
     <title>Task</title>
     <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="style/pikaday.css"/>
     <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
-    
     <section class="main">
         <div class="left-panel show">
             <button class="toggle-menu">
                 <span class="line"></span>
             </button>
             <menu>
-                <input type="text" name="search" class="search" placeholder="search:">
-                <div class="group-checkbox">
-                    <input id="web" type="checkbox"/>
-                    <label for="web">web</label>
-                    <input id="desctop" type="checkbox"/>
-                    <label for="desctop">desctop</label>
-                    <input id="mobile" type="checkbox"/>
-                    <label for="mobile">mobile</label>
-                    <input id="support" type="checkbox"/>
-                    <label for="support">support</label>
-
-                </div>
-                <input type="text" name="date" class="date" placeholder="12-04-16" pattern="\d{1,2}/\d{1,2}/\d{4}">
+                <form name="filter">
+                    <input type="text" name="search" class="search" value="" placeholder="search:">
+                    <div class="group-checkbox">
+                    </div>
+                    <input type="text" name="searchDate" class="date" placeholder="12-04-2016" pattern="\d{1,2}-\d{1,2}-\d{4}">
+                </form>
             </menu>
         </div>
         <section class="dashboard small">
             <table>
                 <thead>
                     <tr>
-                        <th>Project name</th>
-                        <th>Due date</th>
-                        <th>Created</th>
-                        <th>Memebers</th>
-                        <th>Type</th>
-                        <th>Status</th>
-                        <th>Customer</th>
+                        <th data-sort="name">Project name</th>
+                        <th data-sort="dueDate">Due date</th>
+                        <th data-sort="createdDate">Created</th>
+                        <th data-sort="members">Memebers</th>
+                        <th data-sort="type">Type</th>
+                        <th data-sort="status">Status</th>
+                        <th data-sort="customer">Customer</th>
                         <th>
                             <button class="add-project"></button>
                         </th>
                     </tr>
                 </thead>
-                <tbody>     
-                    <tr>
-                        <td>Project name</td>
-                        <td>Due date</td>
-                        <td>Created</td>
-                        <td>Memebers</td>
-                        <td>Type</td>
-                        <td>Status</td>
-                        <td>Customer</td>
-                        <td><button class="delete-project"></button></td>
-                    </tr>
-                    <tr>
-                        <td>Test name project</td>
-                        <td>11-11-2011</td>
-                        <td>11-11-2011</td>
-                        <td>33</td>
-                        <td>Desctop</td>
-                        <td>end</td>
-                        <td>Danil</td>
-                        <td><button class="delete-project"></button></td>
-                    </tr>
-                     <tr>
-                        <td>Test name project</td>
-                        <td>11-11-2011</td>
-                        <td>11-11-2011</td>
-                        <td>33</td>
-                        <td>Desctop</td>
-                        <td>end</td>
-                        <td>Danil</td>
-                        <td><button class="delete-project"></button></td>
-                    </tr>
-                    <tr class="overdue">
-                        <td>Project name</td>
-                        <td>Due date</td>
-                        <td>Created</td>
-                        <td>Memebers</td>
-                        <td>Type</td>
-                        <td>Status</td>
-                        <td>Customer</td>
-                        <td><button class="delete-project"></button></td>
-                    </tr>
-                     <tr>
-                        <td>Test name project</td>
-                        <td>11-11-2011</td>
-                        <td>11-11-2011</td>
-                        <td>33</td>
-                        <td>Desctop</td>
-                        <td>end</td>
-                        <td>Danil</td>
-                        <td><button class="delete-project"></button></td>
-                    </tr>
-                     <tr>
-                        <td>Test name project</td>
-                        <td>11-11-2011</td>
-                        <td>11-11-2011</td>
-                        <td>33</td>
-                        <td>Desctop</td>
-                        <td>end</td>
-                        <td>Danil</td>
-                        <td><button class="delete-project"></button></td>
-                    </tr>
-                    <tr>
-                        <td>Project name</td>
-                        <td>Due date</td>
-                        <td>Created</td>
-                        <td>Memebers</td>
-                        <td>Type</td>
-                        <td>Status</td>
-                        <td>Customer</td>
-                        <td><button class="delete-project"></button></td>
-                    </tr>                    
+                <tbody>
                 </tbody>
             </table>
-            
         </section>
-        <section class="new-project show">
+        <section class="new-project">
                 <div class="clickable"></div>
                 <div class="right-panel">
-                    <form name="project">
-                        <input type="text" name="name" placeholder="project name:">
-                        <input type="text" class="date" name="dueDate" placeholder="due date">
-                        <input type="text" class="date" name="createdDate" placeholder="created">
-                        <input type="text" name="members" placeholder="members:">
+                    <form name="project" id="newProject">
+                        <input type="text" name="name" placeholder="project name:" required >
+                        <input type="text" class="date" name="dueDate" placeholder="due date" required pattern="\d{1,2}-\d{1,2}-\d{4}">
+                        <input type="text" class="date" name="createdDate" placeholder="created" required>
+                        <input type="text" name="members" placeholder="members:" required>
                         <div class="select">
-                            <input type="text" class="custom" placeholder="type" onfocus="this.blur()" readonly="readonly">
-                            <ul class="dropdown">
-                                <li data-value="5">DAd</li>
-                                <li data-value="6">res</li>
-                                <li>2</li>
-                                <li>4</li>
+                            <input type="text" class="custom" name="type" placeholder="type" required onfocus="this.blur()">
+                            <ul class="dropdown" id="types">
+
                             </ul>
                         </div>
                         <div class="select">
-                            <input type="text" class="custom" placeholder="customer"  onfocus="this.blur()" readonly="readonly">
-                            <ul class="dropdown">
-                                <li data-value="5">5</li>
-                                <li data-value="6">6</li>
-                                <li>2</li>
-                                <li>4</li>
+                            <input type="text" class="custom" name="customer" placeholder="customer" required  onfocus="this.blur()">
+                            <ul class="dropdown" id="customers">
+
                             </ul>
                         </div>
-                        <input type="submit" value="create" >
+                        <input type="submit" name="add" disabled value="create" >
                     </form>
                 </div>
             </section>
@@ -155,51 +72,23 @@
     <footer>
         <p>infopulse courses @ 2016</p> 
     </footer>
-    <script type="text/javascript">
-        var button = document.querySelector('.toggle-menu');
-        var button1 = document.querySelector('.add-project');
-        var main = document.querySelector('.clickable');
-        var menu = document.querySelector('menu');
-        var selects = document.querySelectorAll('.select');
-        button.addEventListener('click', function(e){
-            var t = document.querySelector('.left-panel');
-            var s = document.querySelector('.dashboard');
-            t.classList.toggle('show');
-            s.classList.toggle('small');
-            console.log(t); 
-        });
 
-        for(var i = 0; i <selects.length; i++){
-            selects[i].addEventListener('click', function(e){
-                e.stopPropagation();
-                if(e.target.tagName !== 'INPUT'){
-                    this.children[0].value = e.target.innerText;    
-                }
+    <script type="text/javascript" src="js/functions.js"></script>
+    <script type="text/javascript" src="js/helpers.js"></script>
+    <script type="text/javascript" src="js/repository.js"></script>
 
-                this.classList.toggle('active');
-                
-                
-            }); 
-        }       
+    <script type="text/javascript" src="js/projectsModel.js"></script>
 
-        document.addEventListener('click', function(e){
-            for(var i = 0; i <selects.length;i++){
-                selects[i].classList.remove('active');  
-            }
-            
-        });
-        
-        main.addEventListener('click', function(e){
+    <script type="text/javascript" src="js/viewProjects.js"></script>
+    <script type="text/javascript" src="js/viewFilterProjects.js"></script>
+    <script type="text/javascript" src="js/viewNewProject.js"></script>
+    <script type="text/javascript" src="js/mainView.js"></script>
 
-            var t = document.querySelector('.new-project');
-            t.classList.remove('show');
-            console.log(t); 
-        },true);
-        button1.addEventListener('click', function(e){
-            var t = document.querySelector('.new-project');
-            t.classList.toggle('show');
-            console.log(t); 
-        });
-    </script>
+    <script type="text/javascript" src="js/projectsController.js"></script>
+
+    <script type="text/javascript" src="js/moment.js"></script>
+    <script type="text/javascript" src="js/pikaday.js"></script>
+
+    <script type="text/javascript" src="js/app.js"></script>
 </body>
 </html>

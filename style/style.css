@@ -68,6 +68,9 @@ menu{
     margin: 0 auto;
     height: 100%;
 }
+input[type="text"]:invalid{
+    border-bottom: red 2px solid;
+}
 input[type="text"]{
     font-family: 'Handlee', Calibri;
     box-sizing: border-box;
@@ -79,7 +82,7 @@ input[type="text"]{
     margin: 5% 0;
     border: none;
     padding: 10px;
-    border-bottom: #d77016 2px solid; 
+    border-bottom: #d77016 2px solid;
     outline: none;
     text-transform: uppercase;
 }
@@ -180,6 +183,9 @@ input[type="submit"]{
     height: 95%;
     margin: auto;
 }
+form[name="filter"]{
+    height: 100%;
+}
 .select{
     position: relative;
     height: 7%;
@@ -258,13 +264,13 @@ input.custom{
     height: 34px;
     background: #0a0b0d url('../img/add-new.png') no-repeat center;
 }
-table{
+.dashboard table{
     font-size: .9em;
     width: 98%; 
     text-align: center;
     border-collapse: collapse;
 }
-thead{
+.dashboard thead{
     background: #0a0b0d;
     position: fixed;
     display: block;
@@ -276,48 +282,62 @@ thead{
     border-bottom: 1px solid #737374;
     z-index: 40;
 }
-tbody{    
+.dashboard tbody{
     display: table;
 }
-table td, table th{
+.dashboard table td,
+.dashboard table th{
     width: 200px;
     padding: 1% 2%;
 }
-table td{
+.dashboard table th:hover{
+    cursor: pointer;
+}
+.dashboard table th.desc:after{
+    content: '\2B06';
+    font-size: 1.2em;
+    padding-left: 5px;
+}
+.dashboard table th.asc:after{
+    content: '\2B07';
+    font-size: 1.2em;
+    padding-left: 5px;
+}
+
+.dashboard table td{
     padding: 1.5% 2%;
 }
 
-table td:first-child,
-table th:first-child{
+.dashboard table td:first-child,
+.dashboard table th:first-child{
     width: 280px;
 }
-table td:last-child,
-table th:last-child{
+.dashboard table td:last-child,
+.dashboard table th:last-child{
     width: 120px;
 }
-table th:first-child{
+.dashboard table th:first-child{
     background: url("../img/border-th.png") no-repeat right center;
     background-size: 1% 50%;
 }
-table td:first-child{
+.dashboard table td:first-child{
     background: url("../img/border-td.png") no-repeat right center;
     background-size: 1% 50%;
 }
 
-tbody tr:nth-child(even) {
+.dashboard tbody tr:nth-child(even) {
     background: #0f1012;
 }
-tbody tr:hover {
+.dashboard tbody tr:hover {
     background-color: #353E44;
 }
-tbody tr.overdue{
+.dashboard tbody tr.overdue{
     background: #6f0d0f;
 }
-tbody tr.overdue td{
+.dashboard tbody tr.overdue td{
     background: none;
 }
-
-tbody tr:hover .delete-project {
+.dashboard tbody tr:hover .delete-project {
     opacity: 1;
 }
 .delete-project{
