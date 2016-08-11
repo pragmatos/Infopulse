@@ -16,12 +16,12 @@
             callback();
         });
 
-    }
+    };
     Repository.prototype.getBy = function(prop, callback){
         var data = JSON.parse(localStorage[this._name]);
 
         callback(data[prop]);
-    }
+    };
     Repository.prototype.save = function(project, callback){
         var data = JSON.parse(localStorage[this._name]),
             projects = data.projects,
@@ -34,7 +34,7 @@
         localStorage[this._name] = JSON.stringify(data);
 
         callback(newProject);
-    }
+    };
     Repository.prototype.remove = function(id, callback) {
         var data = JSON.parse(localStorage[this._name]),
             projects = data.projects;
@@ -47,7 +47,7 @@
         data.projects = projects;
         localStorage[this._name] = JSON.stringify(data);
         callback(projects);
-    }
+    };
 
 	window.app = window.app || {};
     window.app.Repository = Repository;

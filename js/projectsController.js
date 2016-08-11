@@ -18,7 +18,7 @@
         that.view.bind('filterProjects', function(params){
             that.filterProjects(params);
         });
-    };
+    }
     Controller.prototype.addProject = function(project){
         var that = this;
         that.model.create(project, function(newProject){
