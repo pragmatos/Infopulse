@@ -4,7 +4,9 @@
     function View(element, model){
         this.$filter = element;
         this.model = model;
-        this.filterParams = {};
+        this.filterParams = {
+            type: []
+        };
         this.init();
     }
     View.prototype.onFilter = function(handler){
@@ -25,6 +27,11 @@
             };
             handler(that.filterParams);
         }.bind(this));
+        this.$filter['search'].addEventListener('input', function(e){
+            console.log(e);
+            that.filterParams.search = e.target.value;
+            handler(that.filterParams);
+        });
     };
     View.prototype._printCheckboxes = function(selector, data){
         var parent = document.querySelector(selector),

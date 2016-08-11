@@ -37,19 +37,37 @@
         return this.getNormalDate(this.today);
     }
     Model.prototype.filterBy = function(params, callback){
-        var result = [];
+        var result = [],
+            that = this;
             this.storage.getBy('projects',function(projects){
-                console.log(params.type.length);
                 if(params.type.length){
                     result = projects.filter(function(item){
                         if(params.type.indexOf(item['type'])>-1){
                             return true;
                         }
                     });
-                    callback(result);
-                    return;
                 }
-                callback(projects);
+                else{
+                    result = projects;
+                }
+                if(params.searchDate){
+                    result = result.filter(function(item){
+                        if(that.convertDate(params.searchDate) <= item.dueDate){
+                            return true;
+                        }
+                    });
+                }
+                if(params.search){
+                    result = result.filter(function(item){
+                        if(item.name.toLowerCase().indexOf(params.search.toLocaleLowerCase()) > -1){
+                            return true;
+                        }
+                        if(item.members.toLowerCase().indexOf(params.search.toLocaleLowerCase()) > -1){
+                            return true;
+                        }
+                    });
+                }
+                callback(result);
 
             });
 
